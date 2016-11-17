@@ -25,6 +25,16 @@ function weatherSuccess(data) {
   $('#icon').attr('src', iconUrl);
 }
 
+function displayData() {
+    var urlByCity = function(city) {
+      var base = 'http://api.openweathermap.org/data/2.5/weather?q=';
+      return base + city + '&appid=' + API_KEY;
+    };
+
+    var userCity = $('#userCity').val();
+    $.get(urlByCity(userCity)).then(weatherSuccess, handleError);
+  }
+
 $(document).ready(function() {
   $.get('http://ip-api.com/json').then(function(ipJSON) {
     var lat = ipJSON.lat;
@@ -33,14 +43,11 @@ $(document).ready(function() {
       lat + '&lon=' + lon + '&appid=' + API_KEY;
     return $.get(requestUrl);
   }).then(weatherSuccess, handleError);
-
-  $('#getWeather').on('click', function() {
-    var urlByCity = function(city) {
-      var base = 'http://api.openweathermap.org/data/2.5/weather?q=';
-      return base + city + '&appid=' + API_KEY;
-    };
-
-    var userCity = $('#userCity').val();
-    $.get(urlByCity(userCity)).then(weatherSuccess, handleError);
+  
+  $('#getWeather').click(displayData);
+  
+  $('#userCity').keypress(function(e) {
+    if (e.which == 13)
+        displayData();
   });
 });
