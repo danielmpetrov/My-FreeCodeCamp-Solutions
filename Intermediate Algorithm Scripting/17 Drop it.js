@@ -4,9 +4,14 @@
 
 function drop(arr, func) {
   var arrCopy = arr.slice();
+
   for (var i = 0; i < arr.length; i++) {
-    if (!func(arr[i])) arrCopy.shift();
-    else break;
+    if (!func(arr[i])) {
+      arrCopy.shift();
+    } else {
+      break;
+    }
   }
+
   return arrCopy;
 }
