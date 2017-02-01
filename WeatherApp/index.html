@@ -14,14 +14,14 @@
     <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
-    <div class="wrap">
+    <div class="container">
       <div class="form">
         <button id="getWeather" class="btn">Search</button>
         <input id="userCity" type="text" placeholder="city name">
       </div>
       <div class="message-wrap">
         <p class="title">Weather Report</p>
-        <div id="message" class="message"><img style="margin-top: 40px" src="./img/loading.gif" /></div>
+        <div id="message"><img style="margin-top: 40px" src="./img/loading.gif" />
         <script id="weather-template" type="text/x-handlebars-template">
           <span class="weather-description">{{weather.0.main}} ( {{weather.0.description}} )</span>
           <hr>
@@ -34,6 +34,7 @@
             <img id="icon" src="http://openweathermap.org/img/w/{{weather.0.icon}}.png">
           </div>
         </script>
+        </div>
       </div>
       <footer>
         <div class="footer">Designed with <span class="red">&#10084;</span> by Daniel Petrov.</div>

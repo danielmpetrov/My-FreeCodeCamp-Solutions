@@ -1,4 +1,5 @@
 const API_KEY = 'dccbf5e723c2f71607f4a80bdf256bc7';
+var template;
 
 function handleError(xhr, state, error) {
   $("#message").html("Whoops... an error :(");
@@ -6,8 +7,6 @@ function handleError(xhr, state, error) {
 
 function weatherSuccess(data) {
   data.main.temp = data.main.temp.toFixed(1); // round the temp
-  var source = $("#weather-template").html();
-  var template = Handlebars.compile(source);
   var html = template(data);
   $("#message").html(html);
 }
@@ -25,6 +24,9 @@ function displayData() {
 }
 
 $(document).ready(function() {
+  var source = $("#weather-template").html();
+  template = Handlebars.compile(source);
+
   $.get('http://ip-api.com/json').then(function(ipJSON) {
     var lat = ipJSON.lat;
     var lon = ipJSON.lon;
