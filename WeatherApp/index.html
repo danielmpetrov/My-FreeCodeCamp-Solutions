@@ -21,19 +21,8 @@
       </div>
       <div class="message-wrap">
         <p class="title">Weather Report</p>
-        <div id="message"><img style="margin-top: 40px" src="./img/loading.gif" />
-        <script id="weather-template" type="text/x-handlebars-template">
-          <span class="weather-description">{{weather.0.main}} ( {{weather.0.description}} )</span>
-          <hr>
-          <span class="country">Country: {{sys.country}}</span>
-          <hr>
-          <span class="city">City of {{name}}</span>
-          <hr>
-          <div class="temperature-icon">
-            <span class="temperature">{{main.temp}} &#8451;</span>
-            <img id="icon" src="http://openweathermap.org/img/w/{{weather.0.icon}}.png">
-          </div>
-        </script>
+        <div id="message">
+          <img src="./img/ring.svg" style="margin-top: 30px;">
         </div>
       </div>
       <footer>
