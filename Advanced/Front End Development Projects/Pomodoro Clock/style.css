@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #56C4C5;
+}
+
+h2 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#app {
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  color: #006E6F;
+  padding: 10px;
+  margin: 5rem auto 0;
+}
+
+#timer {
+  font-size: 10rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+button {
+  display: inline-block;
+  background-color: #56C4C5;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  height: 4rem;
+  width: auto;
+  padding: 0 2rem;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 8px;
+}
+
+button.round {
+  border-radius: 50%;
+  padding: 0;
+}
+
+#customize-panel, #buttons {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#customize-panel button {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+
+#customize-panel div {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+#customize-panel div p {
+  font-size: 1.5rem;
+  padding-bottom: 3px;
+}
+
+#customize-panel span {
+  display: inline-block;
+  width: 2.5rem;
+}
+
+#usage-wrapper {
+  width: 320px;
+  margin: 1rem auto;
+  color: white;
+  font-size: 1.3rem;
+}
+
+#usage-wrapper ol {
+  list-style-position: inside;
+}
+
+#usage-wrapper h4 {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+#usage-wrapper p {
+  font-style: italic;
+}
+
+/* 320px+ */
+@media screen and (min-width: 320px) {
+  #app {
+    width: 320px;
+  }
+}

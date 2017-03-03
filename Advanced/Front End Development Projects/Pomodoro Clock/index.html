@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  
+  <div id="app">
+    <h2 v-bind:title="mode">{{display}}</h2>
+    <div id="timer" v-on:click="toggle">{{getTimer}}</div>
+    <div id="buttons">
+      <button v-on:click="restart">
+        New Pomodoro
+      </button>
+    </div>
+    <div id="customize-panel">
+      <div id="session-controler">
+        <p>Session Length</p>
+        <button v-on:click="incrementSession(-1)" class="round">-</button>
+        <span>{{sessionInput}}</span>
+        <button v-on:click="incrementSession(+1)" class="round">+</button>
+      </div>
+      <div id="break-controler">
+        <p>Break Length</p>
+        <button v-on:click="incrementBreak(-1)" class="round">-</button>
+        <span>{{breakInput}}</span>
+        <button v-on:click="incrementBreak(+1)" class="round">+</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="usage-wrapper">
+    <h4>How to use?</h4>
+    <ol>
+      <li>Adjust Session and Break times as needed.</li>
+      <li>Click 'New Pomodoro' to start the timer with those values.</li>
+      <li>Click on the running time to pause/resume.</li>
+    </ol>
+    <p>
+      Note: Session/Break time can be changed at any time while timer is working.
+      In that case, the new value will be initialized on the next timer rotation.
+    </p>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
