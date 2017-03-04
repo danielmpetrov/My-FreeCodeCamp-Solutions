@@ -1,2 +1,3 @@
 # My-FreeCodeCamp-Solutions
-My noob-ish try at the FreeCodeCamp curriculum. 
+My take at the https://www.freecodecamp.com/ curriculum.
+Missing solutions are being worked on when time is available. :)
