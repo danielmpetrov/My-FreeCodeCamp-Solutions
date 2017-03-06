@@ -1,22 +1,18 @@
 function sym() {
-  // put all passed arguments in args[]
-  var args = [];
-  for (var i = 0; i < arguments.length; i++) {
-    args.push(arguments[i]);
-  }
+  const args = [].slice.call(arguments);
 
   function symDiffOfTwo(arr1, arr2) {
-    var arrDiff = [];
+    const arrDiff = [];
 
-    for (var p = 0; p < arr1.length; p++) {
+    for (let p = 0; p < arr1.length; p++) {
       if(arr2.indexOf(arr1[p]) < 0 && arrDiff.indexOf(arr1[p]) < 0)
         arrDiff.push(arr1[p]);
-    };
+    }
 
-    for (var q = 0; q < arr2.length; q++) {
+    for (let q = 0; q < arr2.length; q++) {
       if(arr1.indexOf(arr2[q]) < 0 && arrDiff.indexOf(arr2[q]) < 0)
         arrDiff.push(arr2[q]);
-    };
+    }
 
     return arrDiff;
   }
