@@ -1,5 +1,5 @@
 function myReplace(str, before, after) {
-  const isCapitalized = before[0] === before[0].toUpperCase();
+  const isCapitalized = before.charAt(0) === before.charAt(0).toUpperCase();
   
   after = isCapitalized
     ? after.charAt(0).toUpperCase() + after.slice(1)
